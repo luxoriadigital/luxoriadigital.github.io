@@ -52,6 +52,26 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://luxoriadigital.github.io/blog/prix-site-web-salon-coiffure.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://luxoriadigital.github.io/blog/creation-site-institut-beaute-belgique.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://luxoriadigital.github.io/services/creation-site-bruxelles.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://luxoriadigital.github.io/services/creation-site-liege.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://luxoriadigital.github.io/mentions-legales.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
