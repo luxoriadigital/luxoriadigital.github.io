@@ -77,6 +77,21 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://luxoriadigital.be/blog/boutique-en-ligne-salon-coiffure.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://luxoriadigital.be/blog/creation-site-spa-belgique.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://luxoriadigital.be/blog/creation-site-barbershop-belgique.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://luxoriadigital.be/services/creation-site-bruxelles.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
