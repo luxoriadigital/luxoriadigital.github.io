@@ -1,8 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#060620"/>
       <stop offset="100%" stop-color="#000"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a1aff"/>
+      <stop offset="100%" stop-color="#00d4ff"/>
     </linearGradient>
     <linearGradient id="txt" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#fff"/>
@@ -11,13 +15,20 @@
     </linearGradient>
   </defs>
   <rect width="1200" height="630" fill="url(#bg)"/>
-  <g transform="translate(560,140)">
-    <rect x="0" y="0" width="80" height="280" rx="8" fill="white" opacity="0.95"/>
-    <rect x="0" y="140" width="160" height="80" rx="8" fill="white" opacity="0.95"/>
-    <rect x="80" y="60" width="80" height="80" rx="8" fill="white" opacity="0.95"/>
-    <rect x="160" y="0" width="80" height="280" rx="8" fill="white" opacity="0.95"/>
-    <rect x="160" y="140" width="80" height="80" rx="8" fill="white" opacity="0.95"/>
+  <rect x="0" y="0" width="1200" height="4" fill="url(#accent)"/>
+  <circle cx="1040" cy="80" r="320" fill="#1a1aff" opacity="0.06"/>
+  <circle cx="1100" cy="40" r="200" fill="#00d4ff" opacity="0.05"/>
+  <g transform="translate(140,150)">
+    <rect x="0" y="0" width="80" height="300" rx="10" fill="white" opacity="0.95"/>
+    <rect x="0" y="150" width="170" height="80" rx="10" fill="white" opacity="0.95"/>
+    <rect x="85" y="70" width="85" height="80" rx="10" fill="white" opacity="0.95"/>
+    <rect x="170" y="0" width="80" height="300" rx="10" fill="white" opacity="0.95"/>
+    <rect x="170" y="150" width="80" height="80" rx="10" fill="white" opacity="0.95"/>
   </g>
-  <text x="600" y="500" font-family="sans-serif" font-size="80" font-weight="700" fill="url(#txt)" text-anchor="middle" letter-spacing="12">LUXORIA</text>
-  <text x="600" y="550" font-family="sans-serif" font-size="28" fill="#8892b0" text-anchor="middle" letter-spacing="6">DIGITAL</text>
+  <text x="440" y="295" font-family="'Rajdhani','Segoe UI',sans-serif" font-size="108" font-weight="700" fill="url(#txt)" text-anchor="start" letter-spacing="14">LUXORIA</text>
+  <text x="440" y="360" font-family="'Rajdhani','Segoe UI',sans-serif" font-size="48" fill="#00d4ff" text-anchor="start" letter-spacing="10" font-weight="600">DIGITAL</text>
+  <rect x="440" y="390" width="80" height="3" rx="1.5" fill="url(#accent)"/>
+  <text x="440" y="440" font-family="'Segoe UI',Arial,sans-serif" font-size="26" fill="#8892b0" text-anchor="start" letter-spacing="3">AGENCE DIGITALE SPÉCIALISÉE BEAUTÉ</text>
+  <text x="440" y="480" font-family="'Segoe UI',Arial,sans-serif" font-size="18" fill="#555" text-anchor="start" letter-spacing="2">Création de sites web · Réservation en ligne · SEO local</text>
+  <text x="600" y="590" font-family="'Segoe UI',Arial,sans-serif" font-size="20" fill="#444" text-anchor="middle" letter-spacing="2">luxoriadigital.be</text>
 </svg>
