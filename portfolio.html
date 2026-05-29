@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Portfolio | Luxoria Digital</title>
+<meta name="description" content="Découvrez nos réalisations de sites web pour salons de coiffure, instituts de beauté, barbershops et spas en Belgique.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://luxoriadigital.be/portfolio.html">
+<meta property="og:url" content="https://luxoriadigital.be/portfolio.html">
+<meta property="og:title" content="Portfolio | Luxoria Digital">
+<meta property="og:description" content="Découvrez nos réalisations de sites web pour salons de coiffure et instituts de beauté en Belgique.">
+<meta property="og:image" content="https://luxoriadigital.be/logo.svg">
+<meta property="og:locale" content="fr_BE">
+<meta property="og:site_name" content="Luxoria Digital">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Portfolio | Luxoria Digital">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--black:#000;--navy:#060620;--blue:#1a1aff;--cyan:#00d4ff;--muted:#8892b0;--white:#fff}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;line-height:1.6}
+a{text-decoration:none;color:inherit}
+header{position:sticky;top:0;z-index:50;border-bottom:1px solid rgba(255,255,255,.1);background:rgba(0,0,0,.75);backdrop-filter:blur(20px)}
+.nav-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:16px 40px}
+.logo-wrap{display:flex;align-items:center;gap:12px}
+.logo-text{font-family:'Rajdhani',sans-serif;font-size:1.9rem;font-weight:700;letter-spacing:.38em;text-transform:uppercase}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{font-size:.8rem;text-transform:uppercase;letter-spacing:.28em;color:var(--muted)}
+.nav-links a:hover{color:var(--white)}
+.btn-ghost{display:inline-flex;align-items:center;justify-content:center;padding:12px 28px;border:1px solid rgba(255,255,255,.55);color:var(--white);font-size:.8rem;text-transform:uppercase;letter-spacing:.18em;border-radius:9999px;transition:all .25s}
+.btn-ghost:hover{background:var(--blue);border-color:var(--blue)}
+.btn-primary{display:inline-flex;align-items:center;justify-content:center;padding:14px 32px;background:linear-gradient(135deg,var(--blue),var(--cyan));color:var(--black);font-size:.8rem;text-transform:uppercase;letter-spacing:.18em;border-radius:9999px;border:none;box-shadow:0 18px 45px rgba(26,26,255,.28);transition:all .25s}
+.btn-primary:hover{transform:translateY(-2px)}
+.page-hero{position:relative;min-height:50vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:80px 40px;background:radial-gradient(circle at 50% 85%,rgba(26,26,255,.34),transparent 34%),radial-gradient(circle at 50% 100%,rgba(6,6,32,.95),rgba(0,0,0,1) 70%)}
+.page-hero-content{position:relative;z-index:1;max-width:800px}
+.page-hero h1{font-family:'Rajdhani',sans-serif;font-size:clamp(2.8rem,6vw,4.5rem);font-weight:700;text-transform:uppercase;line-height:.9;letter-spacing:.03em;margin-bottom:24px}
+.page-hero-grad{background:linear-gradient(90deg,#fff 0%,#7b87ff 48%,#00d4ff 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.page-hero p{font-size:1.1rem;font-weight:300;color:var(--muted);max-width:640px;margin:0 auto 32px;line-height:1.8}
+.section{max-width:1280px;margin:0 auto;padding:80px 40px}
+.section-title{font-family:'Rajdhani',sans-serif;font-size:clamp(2rem,4vw,3.2rem);line-height:.95;text-transform:uppercase;letter-spacing:.04em;margin-bottom:20px}
+.breadcrumb{display:flex;gap:8px;justify-content:center;font-size:.75rem;text-transform:uppercase;letter-spacing:.2em;color:var(--muted);margin-bottom:24px}
+.breadcrumb a{color:var(--cyan)}
+.breadcrumb a:hover{color:var(--white)}
+.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.portfolio-card{border:1px solid rgba(255,255,255,.1);border-radius:1.5rem;overflow:hidden;transition:all .3s;background:rgba(255,255,255,.02)}
+.portfolio-card:hover{transform:translateY(-4px);border-color:var(--blue);box-shadow:0 20px 60px rgba(26,26,255,.2)}
+.portfolio-card-img{height:200px;background:linear-gradient(135deg,rgba(26,26,255,.1),rgba(0,212,255,.05));display:flex;align-items:center;justify-content:center}
+.portfolio-card-body{padding:24px}
+.portfolio-card-body h3{font-family:'Rajdhani',sans-serif;font-size:1.4rem;text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px}
+.portfolio-card-body p{color:var(--muted);font-size:.9rem;line-height:1.7;margin-bottom:16px}
+.portfolio-card-body .tag{display:inline-block;font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--cyan);border:1px solid rgba(0,212,255,.3);border-radius:9999px;padding:4px 12px;margin-right:6px;margin-bottom:6px}
+footer{border-top:1px solid rgba(255,255,255,.1);padding:32px 40px}
+.footer-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.footer-copy{font-size:.8rem;color:var(--muted);display:flex;align-items:center;gap:12px}
+.footer-links{display:flex;gap:24px}
+.footer-links a{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
+.footer-links a:hover{color:white}
+@media(max-width:1024px){.portfolio-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){
+  .nav-inner{padding:16px 20px}
+  .nav-links,.btn-ghost.desktop{display:none}
+  .section{padding:48px 20px}
+  .portfolio-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <a href="/" class="logo-wrap">
+      <svg width="44" height="44" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <path fill="white" d="M14 12v40h18l12-12H26V12H14Zm22 0L24 24h12v16h14l-14 14V12Zm14 0v18H38V12h12Z"/>
+      </svg>
+      <span class="logo-text">LUXORIA</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/#portfolio">Portfolio</a></li>
+      <li><a href="/#processus">Processus</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+    <a href="/#contact" class="btn-ghost desktop">Démarrer un projet</a>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="page-hero-content">
+      <div class="breadcrumb">
+        <a href="/">Accueil</a>
+        <span>/</span>
+        <span>Portfolio</span>
+      </div>
+      <h1><span class="page-hero-grad">Nos réalisations</span></h1>
+      <p>Des sites web sur mesure pour salons de coiffure, barbershops et spas.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="portfolio-grid">
+      <a href="/portfolio/elara-paris.html" class="portfolio-card">
+        <div class="portfolio-card-img"><span style="font-size:3rem;opacity:.3">Elara</span></div>
+        <div class="portfolio-card-body">
+          <h3>Elara Paris</h3>
+          <p>Site vitrine pour salon de coiffure haut de gamme à Paris. Design élégant, réservation en ligne, galerie photos.</p>
+          <div><span class="tag">Salon coiffure</span><span class="tag">Site vitrine</span></div>
+        </div>
+      </a>
+      <a href="/portfolio/onyx-barbershop.html" class="portfolio-card">
+        <div class="portfolio-card-img"><span style="font-size:3rem;opacity:.3">Onyx</span></div>
+        <div class="portfolio-card-body">
+          <h3>Onyx Barbershop</h3>
+          <p>Site web pour barbershop avec branding masculin, système de réservation en ligne et SEO local.</p>
+          <div><span class="tag">Barbershop</span><span class="tag">E-réservation</span></div>
+        </div>
+      </a>
+      <a href="/portfolio/zenta-spa.html" class="portfolio-card">
+        <div class="portfolio-card-img"><span style="font-size:3rem;opacity:.3">Zenta</span></div>
+        <div class="portfolio-card-body">
+          <h3>Zenta Spa</h3>
+          <p>Site apaisant pour spa avec design minimaliste, présentation des soins et boutique de produits en ligne.</p>
+          <div><span class="tag">Spa</span><span class="tag">Boutique</span></div>
+        </div>
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-copy">
+      <span>&copy; 2026 Luxoria Digital</span>
+    </div>
+    <div class="footer-links">
+      <a href="/mentions-legales.html">Mentions légales</a>
+      <a href="/confidentialite.html">Confidentialité</a>
+      <a href="#">Instagram</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
