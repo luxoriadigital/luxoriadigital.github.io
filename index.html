@@ -533,7 +533,11 @@ footer{border-top:1px solid rgba(255,255,255,.1);padding:32px 40px}
     <div class="cta-panel">
       <span class="kicker" style="justify-content:center">Contact</span>
       <h2>Prêt à transformer<br>votre présence en ligne ?</h2>
-      <form action="mailto:contact@luxoriadigital.be" method="post" enctype="text/plain" style="max-width:480px;margin:0 auto 32px;display:flex;flex-direction:column;gap:12px">
+      <form action="https://formsubmit.co/contact@luxoriadigital.be" method="POST" style="max-width:480px;margin:0 auto 32px;display:flex;flex-direction:column;gap:12px">
+        <input type="hidden" name="_subject" value="Nouveau contact Luxoria Digital">
+        <input type="hidden" name="_captcha" value="true">
+        <input type="hidden" name="_next" value="https://luxoriadigital.be/merci.html">
+        <input type="text" name="_honey" style="display:none">
         <div style="display:flex;gap:12px;flex-wrap:wrap">
           <input type="text" name="nom" placeholder="Votre nom" required style="flex:1;min-width:180px;padding:14px 18px;border:1px solid rgba(255,255,255,.12);border-radius:9999px;background:rgba(255,255,255,.04);color:var(--white);font-family:inherit;font-size:.9rem;outline:none">
           <input type="email" name="email" placeholder="Votre email" required style="flex:1;min-width:180px;padding:14px 18px;border:1px solid rgba(255,255,255,.12);border-radius:9999px;background:rgba(255,255,255,.04);color:var(--white);font-family:inherit;font-size:.9rem;outline:none">
