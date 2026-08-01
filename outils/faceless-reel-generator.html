@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Générateur de Reels Faceless | Luxoria Digital</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--black:#000;--navy:#060620;--blue:#1a1aff;--cyan:#00d4ff;--muted:#8892b0;--white:#fff;--panel:rgba(255,255,255,.03);--border:rgba(255,255,255,.12)}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:'Segoe UI',Arial,sans-serif;line-height:1.55;min-height:100vh}
+a{color:var(--cyan)}
+.wrap{max-width:1280px;margin:0 auto;padding:32px 24px 80px}
+h1{font-family:'Arial Black',Arial,sans-serif;font-size:clamp(1.6rem,4vw,2.6rem);letter-spacing:.02em;text-transform:uppercase;margin-bottom:8px}
+h1 span{background:linear-gradient(90deg,#fff 0%,#7b87ff 48%,#00d4ff 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--muted);margin-bottom:32px;max-width:640px}
+.grid{display:grid;grid-template-columns:380px 1fr;gap:28px;align-items:start}
+.panel{background:var(--panel);border:1px solid var(--border);border-radius:20px;padding:24px}
+label{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.15em;color:var(--muted);margin:16px 0 8px}
+select,input[type=text]{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--border);background:rgba(255,255,255,.05);color:var(--white);font-family:inherit;font-size:.95rem}
+select:focus,input[type=text]:focus{outline:none;border-color:var(--cyan)}
+.tpl-list{display:flex;flex-direction:column;gap:10px;margin-top:8px}
+.tpl{display:block;cursor:pointer;border:1px solid var(--border);border-radius:14px;padding:12px 14px;transition:all .2s;font-size:.9rem}
+.tpl:hover{border-color:var(--cyan)}
+.tpl.active{border-color:var(--cyan);background:rgba(0,212,255,.08)}
+.tpl b{display:block;font-size:.95rem;margin-bottom:2px}
+.tpl span{color:var(--muted);font-size:.78rem;line-height:1.4}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 22px;border:none;border-radius:9999px;font-family:inherit;font-size:.82rem;text-transform:uppercase;letter-spacing:.1em;cursor:pointer;transition:all .2s;font-weight:600}
+.btn-primary{background:linear-gradient(135deg,var(--blue),var(--cyan));color:var(--black);width:100%;margin-top:20px;box-shadow:0 14px 35px rgba(26,26,255,.3)}
+.btn-primary:hover{transform:translateY(-2px)}
+.btn-copy{background:transparent;border:1px solid var(--border);color:var(--muted);font-size:.72rem;padding:8px 16px;text-transform:uppercase;letter-spacing:.1em;border-radius:9999px;cursor:pointer}
+.btn-copy:hover{border-color:var(--cyan);color:var(--white)}
+.out{display:none}
+.out.show{display:block}
+.out-title{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:8px}
+.out-title h2{font-size:1.15rem;text-transform:uppercase;letter-spacing:.05em}
+.block{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:18px 20px;margin-top:16px}
+.block-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.block-head h3{font-size:.8rem;text-transform:uppercase;letter-spacing:.15em;color:var(--muted)}
+.block p,.block pre{white-space:pre-wrap;font-family:inherit;font-size:.95rem;line-height:1.6}
+.shot{border-top:1px solid var(--border);padding:12px 0;display:grid;grid-template-columns:64px 1fr;gap:12px;font-size:.9rem}
+.shot:first-of-type{border-top:none}
+.shot .time{font-family:Consolas,monospace;font-size:.8rem;color:var(--cyan);padding-top:2px}
+.shot .screen{color:#fff;margin-bottom:4px}
+.shot .foot{color:var(--muted);font-size:.82rem}
+.badge{display:inline-block;font-size:.68rem;text-transform:uppercase;letter-spacing:.12em;color:var(--cyan);border:1px solid rgba(0,212,255,.3);border-radius:9999px;padding:4px 10px;margin-right:6px;margin-bottom:6px}
+.hook-box{background:linear-gradient(135deg,rgba(26,26,255,.15),rgba(0,212,255,.06));border:1px solid rgba(0,212,255,.35);border-radius:14px;padding:14px 18px;font-size:1.05rem;margin-top:12px}
+.hint{color:var(--muted);font-size:.8rem;margin-top:6px}
+.step{display:flex;gap:14px;padding:10px 0;border-top:1px solid var(--border);font-size:.9rem}
+.step:first-of-type{border-top:none}
+.step .n{flex-shrink:0;width:24px;height:24px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700}
+@media(max-width:900px){
+  .grid{grid-template-columns:1fr}
+  .wrap{padding:24px 16px 60px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1><span>Faceless Reel</span> Generator</h1>
+  <p class="sub">Générez en 30 secondes un script prêt à filmer pour Reels/TikTok/Shorts — sans montrer votre visage. Stock footage + voix off CapCut + sous-titres automatiques.</p>
+
+  <div class="grid">
+    <div class="panel">
+      <label>Votre salon / projet</label>
+      <input type="text" id="salon" placeholder="Ex : Salon Élégance" value="Salon Élégance">
+      <label>Ville</label>
+      <input type="text" id="ville" placeholder="Ex : Bruxelles" value="Bruxelles">
+      <label>Niche</label>
+      <select id="niche">
+        <option value="coiffure" selected>Salon de coiffure</option>
+        <option value="barbershop">Barbershop</option>
+        <option value="spa">Spa</option>
+        <option value="institut">Institut de beauté</option>
+        <option value="onglerie">Onglerie / Nail bar</option>
+      </select>
+      <label>Lien pour le CTA (lien en bio)</label>
+      <input type="text" id="url" placeholder="https://luxoriadigital.be/contact.html" value="https://luxoriadigital.be/contact.html">
+      <label>Choisissez un format</label>
+      <div class="tpl-list" id="tplList"></div>
+      <button class="btn btn-primary" onclick="generate()">Générer le reel</button>
+      <p class="hint" style="text-align:center">Un conseil : générez 5 reels d'affilée, filmez/montez tout en une session.</p>
+    </div>
+
+    <div class="panel out" id="out">
+      <div class="out-title">
+        <h2>Votre reel : <span id="tplName"></span></h2>
+        <button class="btn-copy" onclick="copyAll()">Tout copier</button>
+      </div>
+
+      <div class="block">
+        <div class="block-head"><h3>1. Hook à l'écran (0-2s)</h3><button class="btn-copy" onclick="copy('hook')">Copier</button></div>
+        <div class="hook-box" id="hook"></div>
+        <p class="hint">C'est ce que le spectateur voit en arrivant : texte en grand, obligatoire pour arrêter le scroll.</p>
+      </div>
+
+      <div class="block">
+        <div class="block-head"><h3>2. Storyboard (images + voix off)</h3><button class="btn-copy" onclick="copy('shots')">Copier</button></div>
+        <div id="shots"></div>
+        <p class="hint">Chaque shot : une image de stock (Pexels/Pixabay gratuits) ou un enregistrement d'écran, plus la voix off.</p>
+      </div>
+
+      <div class="block">
+        <div class="block-head"><h3>3. Voix off complète (TTS CapCut)</h3><button class="btn-copy" onclick="copy('tts')">Copier</button></div>
+        <p id="tts"></p>
+        <p class="hint">Collez ce texte dans CapCut &gt; Texte &gt; Voix off (TTS), choisissez une voix française, puis générez.</p>
+      </div>
+
+      <div class="block">
+        <div class="block-head"><h3>4. Légende + hashtags</h3><button class="btn-copy" onclick="copy('caption')">Copier</button></div>
+        <p id="caption"></p>
+        <p class="hint" id="tags"></p>
+      </div>
+
+      <div class="block">
+        <div class="block-head"><h3>5. Montage express</h3></div>
+        <div class="step"><span class="n">1</span><span>Montez les clips dans CapCut dans l'ordre du storyboard.</span></div>
+        <div class="step"><span class="n">2</span><span>Ajoutez la voix off TTS et les sous-titres automatiques (CapCut les génère tout seul).</span></div>
+        <div class="step"><span class="n">3</span><span>Publiez sur TikTok + Reels + Shorts avec la même légende. 3 plateformes, 1 montage.</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  var TPL = [
+    {
+      id: 'avant-apres',
+      name: 'Avant / Après',
+      desc: 'Site daté vs site moderne. Le format le plus rentable pour une agence web.',
+      tpl: function (d) {
+        var hook = 'Ce site datait de 2005.';
+        var shots = [
+          { t: '0-2s', screen: 'CE SITE DATAIT DE 2005', foot: 'Clip : vieux site web pixelisé + son "bug". Filtre sépia.', voice: 'C\u2019est le site du salon ' + d.salon + ', en ligne depuis 2005.' },
+          { t: '2-7s', screen: 'ON L\u2019A REFAIT', foot: 'Effet "swipe" : l\u2019ancien site glisse, le nouveau apparaît.', voice: 'On l\u2019a remplacé par une vitrine moderne, adaptée aux mobiles.' },
+          { t: '7-14s', screen: 'RÉSERVATION + PHOTOS + SEO', foot: 'Screen recording : on clique sur réservation, galerie, avis Google.', voice: 'Réservation en ligne, galerie photos et SEO local : tout ce qui manquait.' },
+          { t: '14-20s', screen: 'SON AGENDA SE REMPLIT', foot: 'Clip : calendrier avec rendez-vous qui s\u2019ajoutent.', voice: 'Résultat : son agenda se remplit, sans dépenser un euro en pub.' },
+          { t: '20-24s', screen: 'VOTRE SALON PEUT ÊTRE LE PROCHAIN', foot: 'Écran noir, texte en grand.', voice: 'Votre salon peut être le prochain.' }
+        ];
+        return { hook: hook, shots: shots, tts: joinShots(shots), caption: cap(d) };
+      }
+    },
+    {
+      id: 'erreurs',
+      name: '3 erreurs qui coûtent des clients',
+      desc: 'Listicle : texte à l\u2019écran + stock footage. Facile à monter.',
+      tpl: function (d) {
+        var hook = '3 erreurs qui font fuir vos clientes';
+        var shots = [
+          { t: '0-2s', screen: '3 ERREURS QUI FONT FUIR VOS CLIENTES', foot: 'Clip : femme qui regarde son téléphone, air frustré.', voice: 'Trois erreurs font fuir vos clientes sans que vous le sachiez.' },
+          { t: '2-8s', screen: '1. PAS DE PHOTOS', foot: 'Clip : site vide ou sans images.', voice: 'Première erreur : pas de photos de vos réalisations.' },
+          { t: '8-14s', screen: '2. PAS DE RÉSERVATION EN LIGNE', foot: 'Clip : téléphone qui sonne, ou agenda papier.', voice: 'Deuxième erreur : pas de réservation en ligne, alors que vos clientes veulent réserver à minuit.' },
+          { t: '14-20s', screen: '3. INVISIBLE SUR GOOGLE', foot: 'Clip : recherche Google, votre salon absent.', voice: 'Troisième erreur : votre salon n\u2019apparaît pas quand on cherche "' + d.nicheMots['search'] + ' ' + d.ville + '".' },
+          { t: '20-24s', screen: 'ON RÈGLE TOUT ÇA', foot: 'Écran noir, texte en grand.', voice: 'On règle tout ça en deux à trois semaines.' }
+        ];
+        return { hook: hook, shots: shots, tts: joinShots(shots), caption: cap(d) };
+      }
+    },
+    {
+      id: 'notification',
+      name: 'La notification (3h du matin)',
+      desc: 'Mockup de notification de réservation. Punchy, très partagé.',
+      tpl: function (d) {
+        var hook = '3h du matin. Nouvelle réservation.';
+        var shots = [
+          { t: '0-2s', screen: '3H DU MATIN. NOUVELLE RÉSERVATION.', foot: 'Mockup iPhone : notification "Réservation confirmée — ' + d.salon + '".', voice: 'Trois heures du matin, une nouvelle réservation tombe.' },
+          { t: '2-8s', screen: 'VOTRE SITE TRAVAILLE LA NUIT', foot: 'Clip : téléphone sur une table de nuit qui s\u2019allume.', voice: 'Pendant que vous dormez, votre site travaille pour vous.' },
+          { t: '8-16s', screen: 'RÉSERVATION 24H/24', foot: 'Screen recording : un client réserve en 30 secondes, sans appel.', voice: 'Vos clientes réservent en ligne, à n\u2019importe quelle heure, sans appeler.' },
+          { t: '16-22s', screen: 'ET VOUS, VOUS DORMEZ', foot: 'Écran noir, texte en grand.', voice: 'Et vous, vous dormez tranquille.' },
+          { t: '22-26s', screen: 'PRÊT À REMPLIR VOTRE AGENDA ?', foot: 'Écran noir, texte en grand.', voice: 'Prêt à remplir votre agenda ?' }
+        ];
+        return { hook: hook, shots: shots, tts: joinShots(shots), caption: cap(d) };
+      }
+    },
+    {
+      id: 'temoignage',
+      name: 'Témoignage client (voix off)',
+      desc: 'Stock footage + voix off. Transforme la preuve en vidéo.',
+      tpl: function (d) {
+        var salon = d.salon;
+        var hook = '\u201COn ne savait plus suivre.\u201D';
+        var shots = [
+          { t: '0-2s', screen: '"ON NE SAVAIT PLUS SUIVRE"', foot: 'Clip : femme qui parle en face caméra (stock), subtitres auto.', voice: 'Voici ce que nous a dit la gérante de ' + salon + ' : "On ne savait plus suivre les demandes."' },
+          { t: '2-8s', screen: 'AVANT : AGENDA PAPIER', foot: 'Clip : agenda papier + téléphone qui sonne.', voice: 'Avant : un agenda papier et des messages qui s\u2019empilent.' },
+          { t: '8-16s', screen: 'MAINTENANT : ÇA TOURNE TOUT SEUL', foot: 'Screen recording : le nouveau site, réservation en ligne.', voice: 'Depuis la mise en ligne : les rendez-vous arrivent tout seuls, et le téléphone a cessé de sonner.' },
+          { t: '16-22s', screen: '+40 CLIENTS EN 2 MOIS', foot: 'Clip : salle remplie, sourires.', voice: 'En deux mois, plus de quarante nouveaux clients.' },
+          { t: '22-27s', screen: 'VOTRE TOUR', foot: 'Écran noir, texte en grand.', voice: 'Et si on faisait pareil pour votre salon ?' }
+        ];
+        return { hook: hook, shots: shots, tts: joinShots(shots), caption: cap(d) };
+      }
+    },
+    {
+      id: 'ranking',
+      name: 'Classement Google',
+      desc: 'Preuve SEO : votre client numéro 1 sur Google. Rassurant.',
+      tpl: function (d) {
+        var hook = 'N°1 sur Google à ' + d.ville + ' : voilà pourquoi.';
+        var shots = [
+          { t: '0-2s', screen: 'N°1 SUR GOOGLE À ' + d.ville.toUpperCase(), foot: 'Screenshot : recherche Google "' + d.nicheMots['search'] + ' ' + d.ville + '" avec le client en position 1, cercle rouge.', voice: 'Ce salon apparaît numéro un quand on cherche "' + d.nicheMots['search'] + ' ' + d.ville + '".' },
+          { t: '2-8s', screen: 'COMMENT ?', foot: 'Clip : doigt qui tape sur un clavier.', voice: 'Comment on a fait ?' },
+          { t: '8-16s', screen: 'SITE + SEO LOCAL', foot: 'Screen recording : le site optimisé + Google Business Profile.', voice: 'Un site rapide et optimisé, plus une fiche Google parfaitement remplie.' },
+          { t: '16-22s', screen: 'RÉSULTAT : UNE FILE D\u2019ATTENTE', foot: 'Clip : salon plein.', voice: 'Résultat : ses clientes le trouvent avant ses concurrents.' },
+          { t: '22-27s', screen: 'VOTRE SALON, MÊME RÉSULTAT', foot: 'Écran noir, texte en grand.', voice: 'Votre salon peut obtenir le même résultat.' }
+        ];
+        return { hook: hook, shots: shots, tts: joinShots(shots), caption: cap(d) };
+      }
+    },
+    {
+      id: 'pov',
+      name: 'POV : on scrolle votre site',
+      desc: 'Screen recording pur. Zéro montage, zéro stock, zéro voix.',
+      tpl: function (d) {
+        var hook = 'POV : vous découvrez le site de votre futur salon.';
+        var shots = [
+          { t: '0-2s', screen: 'POV : VOUS DÉCOUVREZ LE SITE DE VOTRE FUTUR SALON', foot: 'Screen recording : le site du client, scroll du haut vers le bas. Musique rythmée.', voice: 'Suivez la visite.' },
+          { t: '2-8s', screen: 'UNE VRAIE VITRINE', foot: 'Le header et le hero du site défilent.', voice: 'Un design qui donne envie d\u2019entrer.' },
+          { t: '8-15s', screen: 'RÉSERVEZ EN 30 SECONDES', foot: 'Le bouton réservation, puis le formulaire.', voice: 'Une réservation en trente secondes.' },
+          { t: '15-22s', screen: 'VOS CLIENTES VONT ADORER', foot: 'La galerie photos + avis.', voice: 'Et des photos qui parlent de votre travail.' },
+          { t: '22-27s', screen: 'ÇA, C\u2019EST VOTRE FUTUR SITE', foot: 'Écran noir, texte en grand.', voice: 'Ça, c\u2019est votre futur site.' }
+        ];
+        return { hook: hook, shots: shots, tts: joinShots(shots), caption: cap(d) };
+      }
+    },
+    {
+      id: 'processus',
+      name: 'Coulisses : la fabrication',
+      desc: 'Screen recording de votre design. Construit la confiance.',
+      tpl: function (d) {
+        var hook = 'C\u2019est comme ça qu\u2019on crée un site de salon.';
+        var shots = [
+          { t: '0-2s', screen: 'COMMENT ON CRÉE UN SITE DE SALON', foot: 'Screen recording : vous travaillez sur le design (Figma/Canva).', voice: 'Voici comment on crée le site d\u2019un salon, étape par étape.' },
+          { t: '2-8s', screen: 'JOUR 1 : LA MAQUETTE', foot: 'Votre écran : la maquette en cours.', voice: 'Premier jour : on dessine la maquette, que le client valide en 48 heures.' },
+          { t: '8-15s', screen: 'JOUR 2-7 : LE DESIGN', foot: 'Votre écran : couleurs, typographies.', voice: 'Ensuite on choisit les couleurs et l\u2019ambiance, adaptées à l\u2019image du salon.' },
+          { t: '15-22s', screen: 'JOUR 8-21 : LA MISE EN LIGNE', foot: 'Votre écran : on ajoute réservation, photos, SEO.', voice: 'Puis on branche la réservation en ligne et le référencement local.' },
+          { t: '22-27s', screen: '2 À 3 SEMAINES, ET C\u2019EST EN LIGNE', foot: 'Écran noir, texte en grand.', voice: 'En deux à trois semaines, le salon est en ligne. Voulez-vous le vôtre ?' }
+        ];
+        return { hook: hook, shots: shots, tts: joinShots(shots), caption: cap(d) };
+      }
+    }
+  ];
+
+  var NICHE = {
+    coiffure: { search: 'salon de coiffure', tags: ['#salondecoiffure', '#coiffure', '#coiffeur', '#salonbeaute', '#nouvellescoiffure'] },
+    barbershop: { search: 'barbershop', tags: ['#barbershop', '#barber', '#coiffurehomme', '#barbier', '#barbershopbelgique'] },
+    spa: { search: 'spa', tags: ['#spa', '#bienetre', '#massage', '#detente', '#spabelgique'] },
+    institut: { search: 'institut de beauté', tags: ['#institutdebeaute', '#beaute', '#soinduvisage', '#esthetique', '#nouvellesalon'] },
+    onglerie: { search: 'onglerie', tags: ['#onglerie', '#nailart', '#ongles', '#manucure', '#nails'] }
+  };
+
+  var CITY_TAG = { 'bruxelles': '#bruxelles', 'liege': '#liege', 'anvers': '#anvers', 'gand': '#gand', 'namur': '#namur', 'charleroi': '#charleroi' };
+
+  function joinShots(shots) {
+    return shots.map(function (s, i) { return (i + 1) + '. ' + s.voice; }).join(' ');
+  }
+
+  function slug(s) { return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, ''); }
+
+  function cap(d) {
+    var v = d.ville;
+    var cityTag = CITY_TAG[slug(v)] || '';
+    var niche = NICHE[d.niche];
+    var tags = niche.tags.concat([cityTag, '#agenceweb', '#creationdesite', '#seo']).filter(Boolean);
+    return 'Votre salon mérite un site qui remplit votre agenda.\n\n' +
+      'Lien en bio pour une maquette gratuite en 48h.\n\n' +
+      '— ' + d.agence + ' · ' + d.url + '\n\n' +
+      tags.join(' ');
+  }
+
+  function getData() {
+    return {
+      salon: document.getElementById('salon').value.trim() || 'Votre salon',
+      ville: document.getElementById('ville').value.trim() || 'votre ville',
+      niche: document.getElementById('niche').value,
+      url: document.getElementById('url').value.trim() || 'https://luxoriadigital.be/contact.html',
+      agence: 'Luxoria Digital',
+      nicheMots: NICHE[document.getElementById('niche').value]
+    };
+  }
+
+  function renderTplList() {
+    var box = document.getElementById('tplList');
+    TPL.forEach(function (t, i) {
+      var el = document.createElement('label');
+      el.className = 'tpl' + (i === 0 ? ' active' : '');
+      el.innerHTML = '<b>' + t.name + '</b><span>' + t.desc + '</span>';
+      el.onclick = function () {
+        var all = box.querySelectorAll('.tpl');
+        for (var j = 0; j < all.length; j++) all[j].classList.remove('active');
+        el.classList.add('active');
+      };
+      box.appendChild(el);
+    });
+  }
+
+  window.generate = function () {
+    var d = getData();
+    var active = document.querySelector('.tpl.active');
+    var idx = active ? Array.prototype.indexOf.call(document.querySelectorAll('.tpl'), active) : 0;
+    var t = TPL[idx];
+    var r = t.tpl(d);
+
+    document.getElementById('tplName').textContent = t.name;
+    document.getElementById('hook').textContent = r.hook;
+
+    var shotsBox = document.getElementById('shots');
+    shotsBox.innerHTML = '';
+    r.shots.forEach(function (s) {
+      var el = document.createElement('div');
+      el.className = 'shot';
+      el.innerHTML = '<div class="time">' + s.t + '</div>' +
+        '<div><div class="screen">' + s.screen + '</div><div class="foot">' + s.foot + '</div></div>';
+      shotsBox.appendChild(el);
+    });
+
+    document.getElementById('tts').textContent = r.tts;
+    document.getElementById('caption').textContent = r.caption;
+    document.getElementById('tags').innerHTML = d.nicheMots.tags.concat([CITY_TAG[slug(d.ville)], '#agenceweb', '#creationdesite', '#seo']).filter(Boolean).map(function (t) { return '<span class="badge">' + t + '</span>'; }).join('');
+
+    document.getElementById('out').classList.add('show');
+    document.getElementById('out').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
+  var store = {};
+  function grab() {
+    store.hook = document.getElementById('hook').textContent;
+    store.shots = Array.prototype.map.call(document.querySelectorAll('#shots .shot'), function (el) {
+      return el.querySelector('.time').textContent + ' | ' + el.querySelector('.screen').textContent + ' — ' + el.querySelector('.foot').textContent;
+    }).join('\n');
+    store.tts = document.getElementById('tts').textContent;
+    store.caption = document.getElementById('caption').textContent + '\n\n' + document.getElementById('tags').textContent;
+  }
+
+  function copyText(text) {
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(function () { flash(); });
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); flash(); } catch (e) {}
+      document.body.removeChild(ta);
+    }
+  }
+
+  function flash() {
+    var b = document.querySelector('.btn-primary');
+    var old = b.textContent;
+    b.textContent = 'Copié !';
+    setTimeout(function () { b.textContent = old; }, 1200);
+  }
+
+  window.copy = function (key) {
+    grab();
+    copyText(store[key]);
+  };
+
+  window.copyAll = function () {
+    grab();
+    var all = 'REEL : ' + document.getElementById('tplName').textContent + '\n\n' +
+      '— HOOK (0-2s) —\n' + store.hook + '\n\n' +
+      '— STORYBOARD —\n' + store.shots + '\n\n' +
+      '— VOIX OFF (TTS) —\n' + store.tts + '\n\n' +
+      '— LÉGENDE + HASHTAGS —\n' + store.caption;
+    copyText(all);
+  };
+
+  renderTplList();
+})();
+</script>
+</body>
+</html>
