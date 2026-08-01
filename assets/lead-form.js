@@ -5,7 +5,7 @@
   // 1. Créez votre compte sur https://web3forms.com
   // 2. Copiez votre access key et collez-la ci-dessous
   // 3. Mettez à jour votre email dans votre dashboard Web3Forms
-  var ACCESS_KEY = 'YOUR_ACCESS_KEY_HERE';
+  var ACCESS_KEY = '3f2e8e09-20a9-40bf-ae47-e1717fd474b1';
 
   var containers = document.querySelectorAll('#lead-form');
   if (!containers.length) return;
@@ -61,11 +61,6 @@
         error.textContent = 'Veuillez accepter la politique de confidentialit\u00e9 pour continuer.';
         error.style.display = 'block';
         return;
-      }
-      if (form.action.indexOf('api.web3forms.com') > -1 && ACCESS_KEY === 'YOUR_ACCESS_KEY_HERE') {
-        e.preventDefault();
-        error.textContent = 'Le formulaire n\u2019est pas encore configur\u00e9 (access key manquante). Contactez-nous \u00e0 contact@luxoriadigital.be';
-        error.style.display = 'block';
       }
     });
 
