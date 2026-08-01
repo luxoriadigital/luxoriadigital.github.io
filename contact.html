@@ -4,17 +4,19 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Contact | Luxoria Digital</title>
-<meta name="description" content="Contactez Luxoria Digital pour votre projet de site web. CrÃ©ation de sites sur mesure pour salons de coiffure, instituts de beautÃ© et spas en Belgique.">
+<meta name="description" content="Contactez Luxoria Digital pour votre projet de site web. Création de sites sur mesure pour salons de coiffure, instituts de beauté et spas en Belgique.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://luxoriadigital.be/contact.html">
+<meta property="og:type" content="website">
 <meta property="og:url" content="https://luxoriadigital.be/contact.html">
 <meta property="og:title" content="Contact | Luxoria Digital">
-<meta property="og:description" content="Contactez Luxoria Digital pour votre projet de site web. CrÃ©ation de sites sur mesure pour salons de coiffure, instituts de beautÃ© et spas en Belgique.">
+<meta property="og:description" content="Contactez Luxoria Digital pour votre projet de site web. Création de sites sur mesure pour salons de coiffure, instituts de beauté et spas en Belgique.">
 <meta property="og:image" content="https://luxoriadigital.be/logo.svg">
 <meta property="og:locale" content="fr_BE">
 <meta property="og:site_name" content="Luxoria Digital">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Contact | Luxoria Digital">
+<meta name="twitter:description" content="Contactez Luxoria Digital pour votre projet de site web. Création de sites sur mesure pour salons de coiffure, instituts de beauté et spas en Belgique.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -54,17 +56,21 @@ header{position:sticky;top:0;z-index:50;border-bottom:1px solid rgba(255,255,255
 .breadcrumb{display:flex;gap:8px;justify-content:center;font-size:.75rem;text-transform:uppercase;letter-spacing:.2em;color:var(--muted);margin-bottom:24px}
 .breadcrumb a{color:var(--cyan)}
 .breadcrumb a:hover{color:var(--white)}
+.form-section{max-width:720px;margin:0 auto;padding:0 40px 80px}
 footer{border-top:1px solid rgba(255,255,255,.1);padding:32px 40px}
 .footer-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
 .footer-copy{font-size:.8rem;color:var(--muted);display:flex;align-items:center;gap:12px}
 .footer-links{display:flex;gap:24px}
 .footer-links a{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
 .footer-links a:hover{color:white}
-.footer-cities{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.08);justify-content:center}.footer-cities a{font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;transition:color .25s}.footer-cities a:hover{color:var(--cyan)}
+.footer-cities{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.08);justify-content:center}
+.footer-cities a{font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;transition:color .25s}
+.footer-cities a:hover{color:var(--cyan)}
 @media(max-width:768px){
   .nav-inner{padding:16px 20px}
   .nav-links,.btn-ghost.desktop{display:none}
   .section{padding:48px 20px}
+  .form-section{padding:0 20px 48px}
   .contact-grid{grid-template-columns:1fr}
 }
 </style>
@@ -83,9 +89,9 @@ footer{border-top:1px solid rgba(255,255,255,.1);padding:32px 40px}
       <li><a href="/#services">Services</a></li>
       <li><a href="/#portfolio">Portfolio</a></li>
       <li><a href="/#processus">Processus</a></li>
-      <li><a href="/#contact">Contact</a></li>
+      <li><a href="/contact.html">Contact</a></li>
     </ul>
-    <a href="/#contact" class="btn-ghost desktop">DÃ©marrer un projet</a>
+    <a href="/contact.html" class="btn-ghost desktop">Démarrer un projet</a>
   </div>
 </header>
 
@@ -98,14 +104,14 @@ footer{border-top:1px solid rgba(255,255,255,.1);padding:32px 40px}
         <span>Contact</span>
       </div>
       <h1><span class="page-hero-grad">Contactez-nous</span></h1>
-      <p>PrÃªt Ã  crÃ©er ou amÃ©liorer votre site web ? Discutons de votre projet.</p>
+      <p>Prêt à créer ou améliorer votre site web ? Discutons de votre projet.</p>
     </div>
   </section>
 
   <section class="section">
     <div class="contact-grid">
       <div class="contact-card">
-        <h2>Nos coordonnÃ©es</h2>
+        <h2>Nos coordonnées</h2>
         <div class="contact-item">
           <div class="contact-icon">@</div>
           <div>
@@ -116,7 +122,7 @@ footer{border-top:1px solid rgba(255,255,255,.1);padding:32px 40px}
         <div class="contact-item">
           <div class="contact-icon">T</div>
           <div>
-            <div class="contact-label">TÃ©lÃ©phone</div>
+            <div class="contact-label">Téléphone</div>
             <div class="contact-value"><a href="tel:+32467679694">+32 467 67 96 94</a></div>
           </div>
         </div>
@@ -130,12 +136,12 @@ footer{border-top:1px solid rgba(255,255,255,.1);padding:32px 40px}
         <div class="contact-item">
           <div class="contact-icon">G</div>
           <div>
-            <div class="contact-label">DisponibilitÃ©</div>
-            <div class="contact-value">RÃ©ponse sous 24h, 7j/7</div>
+            <div class="contact-label">Disponibilité</div>
+            <div class="contact-value">Réponse sous 24h, 7j/7</div>
           </div>
         </div>
         <div style="margin-top:32px">
-          <a href="/#contact" class="btn-primary">Aller au formulaire de contact</a>
+          <a href="#formulaire" class="btn-primary">Envoyer un message</a>
         </div>
       </div>
       <div class="contact-card">
@@ -143,7 +149,7 @@ footer{border-top:1px solid rgba(255,255,255,.1);padding:32px 40px}
         <div class="contact-item">
           <div class="contact-icon">S</div>
           <div>
-            <div class="contact-label">CrÃ©ation de site web</div>
+            <div class="contact-label">Création de site web</div>
             <div class="contact-value"><a href="/services/creation-site-salon-coiffure.html">En savoir plus</a></div>
           </div>
         </div>
@@ -157,7 +163,7 @@ footer{border-top:1px solid rgba(255,255,255,.1);padding:32px 40px}
         <div class="contact-item">
           <div class="contact-icon">S</div>
           <div>
-            <div class="contact-label">RÃ©servation en ligne</div>
+            <div class="contact-label">Réservation en ligne</div>
             <div class="contact-value"><a href="/services/reservation-en-ligne.html">En savoir plus</a></div>
           </div>
         </div>
@@ -171,6 +177,11 @@ footer{border-top:1px solid rgba(255,255,255,.1);padding:32px 40px}
       </div>
     </div>
   </section>
+
+  <section class="form-section" id="formulaire">
+    <h2 class="section-title" style="text-align:center">Demandez votre devis gratuit</h2>
+    <div id="lead-form" data-city=""></div>
+  </section>
 </main>
 
 <footer>
@@ -179,26 +190,32 @@ footer{border-top:1px solid rgba(255,255,255,.1);padding:32px 40px}
       <span>&copy; 2026 Luxoria Digital</span>
     </div>
     <div class="footer-links">
-      <a href="/mentions-legales.html">Mentions lÃ©gales</a>
-      <a href="/confidentialite.html">ConfidentialitÃ©</a>
+      <a href="/mentions-legales.html">Mentions légales</a>
+      <a href="/confidentialite.html">Confidentialité</a>
       <a href="/a-propos.html">À propos</a>
       <a href="/portfolio.html">Portfolio</a>
       <a href="/contact.html">Contact</a>
       <a href="#">Instagram</a>
     </div>
   </div>
-      </div>
-    </div>
-    <div class="footer-cities">
-      <span style="color:var(--muted);font-size:.7rem;text-transform:uppercase;letter-spacing:.1em">Villes :</span>
-      <a href="/services/creation-site-bruxelles.html">Bruxelles</a>
-      <a href="/services/creation-site-liege.html">Liège</a>
-      <a href="/services/creation-site-anvers.html">Anvers</a>
-      <a href="/services/creation-site-gand.html">Gand</a>
-      <a href="/services/creation-site-namur.html">Namur</a>
-      <a href="/services/creation-site-charleroi.html">Charleroi</a>
-    </div>
+  <div class="footer-cities">
+    <span style="color:var(--muted);font-size:.7rem;text-transform:uppercase;letter-spacing:.1em">Villes :</span>
+    <a href="/services/creation-site-bruxelles.html">Bruxelles</a>
+    <a href="/services/creation-site-liege.html">Liège</a>
+    <a href="/services/creation-site-anvers.html">Anvers</a>
+    <a href="/services/creation-site-gand.html">Gand</a>
+    <a href="/services/creation-site-namur.html">Namur</a>
+    <a href="/services/creation-site-charleroi.html">Charleroi</a>
   </div>
 </footer>
+
+<script defer src="/assets/lead-form.js"></script>
+<script defer src="https://www.googletagmanager.com/gtag/js?id=G-6NPD5P8S8V"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-6NPD5P8S8V');
+</script>
 </body>
 </html>
